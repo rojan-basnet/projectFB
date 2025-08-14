@@ -18,7 +18,7 @@ async function handleSubmit(){
   }else{
   setUser(user)
 
-  const res=await fetch('https://projectfb.onrender.com',{
+  const res=await fetch('https://projectfb.onrender.com/create',{
   method:"POST",
   headers: {
     "Content-Type": "application/json"
