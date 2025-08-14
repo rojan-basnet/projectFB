@@ -97,6 +97,7 @@ body{
     .BgScamMessageContainer .scamMessageContainer{
         border:1px solid black;
         width: 40%;
+        min-width: 200px;
         border-radius: 10px;
         height: 30%;
         background-color: rgba(211, 211, 211, 0.497);
