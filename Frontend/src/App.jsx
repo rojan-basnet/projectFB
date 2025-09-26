@@ -39,13 +39,17 @@ async function handleSubmit(){
 function passwordDisplayChange(){
 setpasswordDisplay(!passwordDisplay)
 }
-function handleOkClick(){
-setdisExpiredMsg(false)
+function handleExitSessionExpired(){
+  setdisExpiredMsg(false)
 }
+function handleOkClick(){
+  setdisExpiredMsg(false)
+}
+
   return (
     <>
     <div className='BgScamMessageContainer' style={{display: disExpiredMsg? "flex":"none",pointerEvents: disExpiredMsg ? "auto" : "none"}}>
-      <div className="blurbackground"></div>
+      <div className="blurbackground" onClick={handleExitSessionExpired}></div>
       <div className='scamMessageContainer'>
         Session expired, Please Log In
         <button className='okBtn' onClick={handleOkClick}>OK</button>
@@ -56,8 +60,8 @@ setdisExpiredMsg(false)
     <div className='maincontainer'>
       <input type="text" placeholder='Email or phone number'  value={user.emailOrPhone} onChange={(e)=>setUser({...user,emailOrPhone:e.target.value})} autoComplete='email' />
       <div className="passwordContainer">
-        <input type={passwordDisplay?"text":"password"} placeholder='Password' value={user.password} onChange={(e)=>setUser({...user,password:e.target.value})} autocomplete="current-password" />
-        <button onClick={passwordDisplayChange} className='PasswordShowHideBtn'>{passwordDisplay ?<i class="fa-solid fa-eye"></i>:<i class="fa-solid fa-eye-slash"></i>}</button>
+        <input type={passwordDisplay?"text":"password"} placeholder='Password' value={user.password} onChange={(e)=>setUser({...user,password:e.target.value})} autoComplete="current-password" />
+        <button onClick={passwordDisplayChange} className='PasswordShowHideBtn'>{passwordDisplay ?<i className="fa-solid fa-eye"></i>:<i className="fa-solid fa-eye-slash"></i>}</button>
       </div>
       <button type='submit' onClick={handleSubmit} className='loginbtn'>Log In</button>
       <Link to >Forget password?</Link>
