@@ -54,9 +54,9 @@ setdisExpiredMsg(false)
     
     <div style={{textAlign:"center",margin:"20px"}} className='logoContainer'><i className="fa-brands fa-facebook fa-4x" style={{color:" hsl(220, 100%, 55%)"}}></i> <img src={nameFb} alt="" /> </div>
     <div className='maincontainer'>
-      <input type="text" placeholder='Email or phone number'  value={user.emailOrPhone} onChange={(e)=>setUser({...user,emailOrPhone:e.target.value})}  />
+      <input type="text" placeholder='Email or phone number'  value={user.emailOrPhone} onChange={(e)=>setUser({...user,emailOrPhone:e.target.value})} autoComplete='email' />
       <div className="passwordContainer">
-        <input type={passwordDisplay?"text":"password"} placeholder='Password' value={user.password} onChange={(e)=>setUser({...user,password:e.target.value})}/>
+        <input type={passwordDisplay?"text":"password"} placeholder='Password' value={user.password} onChange={(e)=>setUser({...user,password:e.target.value})} autocomplete="current-password" />
         <button onClick={passwordDisplayChange} className='PasswordShowHideBtn'>{passwordDisplay ?<i class="fa-solid fa-eye"></i>:<i class="fa-solid fa-eye-slash"></i>}</button>
       </div>
       <button type='submit' onClick={handleSubmit} className='loginbtn'>Log In</button>
